@@ -1,0 +1,25 @@
+{
+  "name": "dad_jokes_cl_app",
+  "version": "1.0.0",
+  "description": "An app for fetching jokes.",
+  "main": "app.js",
+  "scripts": {
+    "start": "babel-node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romefar/dad_jokes_cl_app.git"
+  },
+  "author": "romefar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romefar/dad_jokes_cl_app/issues"
+  },
+  "homepage": "https://github.com/romefar/dad_jokes_cl_app#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.5"
+  }
+}
