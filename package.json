@@ -2,10 +2,10 @@
   "name": "dad_jokes_cl_app",
   "version": "1.0.0",
   "description": "An app for fetching jokes.",
-  "main": "app.js",
-  "scripts": {
-    "start": "babel-node index.js",
-    "build": "mkdir lib && mkdir lib/jokes && babel src index.js -s -d lib"
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin" : {
+    "daddy-jokes" : "./index.js"
   },
   "repository": {
     "type": "git",

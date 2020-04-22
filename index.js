@@ -1,8 +1,8 @@
-const { rl } = require('./src/config')
-const { DadJokeService } = require('./src/service/dadJokeService')
-const { messageLog, warningLog, errorLog, printRandomJoke } = require('./src/utils/log-utlis')
-const { saveJokeToFile } = require('./src/save-joke/save-joke')
-const { getRandomJoke } = require('./src/utils/jokes-utils')
+const { rl } = require('./lib/config')
+const { DadJokeService } = require('./lib/service/dadJokeService')
+const { messageLog, warningLog, errorLog, printRandomJoke } = require('./lib/utils/log-utlis')
+const { saveJokeToFile } = require('./lib/save-joke/save-joke')
+const { getRandomJoke } = require('./lib/utils/jokes-utils')
 
 const dadJokeService = new DadJokeService()
 
