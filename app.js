@@ -1,37 +1,36 @@
-const readline = require("readline")
-const { DadJokeService } = require('./dadJokeService')
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    prompt: "Input search term:"
-})
+const { rl } = require('./src/config')
+const { DadJokeService } = require('./src/service/dadJokeService')
+const { messageLog, warningLog, errorLog, printRandomJoke } = require('./src/utils/log-utlis')
+const { saveJokeToFile } = require('./src/save-joke/save-joke')
+const { getRandomJoke } = require('./src/utils/jokes-utils')
+
+const dadJokeService = new DadJokeService()
+
+const serviceCallback = (err, value) => {
+    if(err) {
+        errorLog(err)
+        return rl.close()
+    }
+    if(typeof value === 'string') {
+        warningLog(value)
+        return rl.close()
+    }
+
+    let jokes = [...value]
+    messageLog(`We've found ${value.length} jokes for you!`)
+    let randomJoke = getRandomJoke(jokes)
+    printRandomJoke(randomJoke.joke)
+    saveJokeToFile(randomJoke)
+}
 
 rl.prompt()
-let term = ""
-
 rl.on('line', (lineInput) => {
     let line = lineInput.trim()
   
     if(line.length) { 
-        term = line
-        joke._fetchData(term, response)
-        rl.close() 
+        let term = line.trim()
+        dadJokeService.fetch(term, serviceCallback)
     } else {
         rl.prompt()
     }
 })
-
-const joke = new DadJokeService()
-const response = (err, resData) => {
-     console.log(err || resData)
-    //console.log(typeof resData === 'string' ? resData : "" )
-}
-
-
-// setTimeout(() => {
-//     joke._fetchData('a', response) 
-// }, 2000);
-
-// setTimeout(() => {
-//     joke._fetchData('a', response) 
-// }, 3000);
