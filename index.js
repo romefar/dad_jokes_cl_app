@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { rl } = require('./lib/config')
 const { DadJokeService } = require('./lib/service/dadJokeService')
 const { messageLog, warningLog, errorLog, printRandomJoke } = require('./lib/utils/log-utlis')

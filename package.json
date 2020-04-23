@@ -1,11 +1,11 @@
 {
-  "name": "dad_jokes_cl_app",
-  "version": "1.0.0",
+  "name": "dad_jokes_cl_app_test",
+  "version": "1.0.5",
   "description": "An app for fetching jokes.",
   "main": "index.js",
   "preferGlobal": true,
   "bin" : {
-    "daddy-jokes" : "./index.js"
+    "daddy-jokes" : "index.js"
   },
   "repository": {
     "type": "git",
